@@ -35,8 +35,8 @@ class AjaxGetPortalMembers {
 
     function getOrgMembers($org_id){
         // This will need to be moved to the settings.
-        $key = 'jKyMOiAVkKxSX5IWy-B6rNna5IW6qGT3YzGm3unyR0A';
-        $base_url = 'https://sandbox.orgsync.com/api/v2/';
+        $key = 'key';
+        $base_url = 'orgbaseurl';
         $curl = curl_init();
         //get organization members by organization id
         curl_setopt_array($curl, array(CURLOPT_RETURNTRANSFER => 1, CURLOPT_URL => $base_url."orgs/$org_id/accounts?key=$key"));

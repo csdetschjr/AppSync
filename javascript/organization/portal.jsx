@@ -421,6 +421,7 @@ var ControlBox = React.createClass({
                 var i = 0;
                 var cmpCnt = 0;
                 var errorOccurred = false;
+
                 for(i; i < this.props.inputData.length; i++)
                 {
                     var datum = Array();
@@ -458,60 +459,62 @@ var ControlBox = React.createClass({
                     else if(node.status == 1)
                     {
                         return(<tr>
-                            <td>{node.input}</td>
-                            <td>{node.name}</td>
-                            <td><i className="fa fa-check text-success"></i></td>
-                        </tr>
-                    );
-                }
-                else if(node.status == 2)
-                {
-                    return(<tr>
-                        <td>{node.input}</td>
-                        <td>{node.name}</td>
-                        <td><i className="fa fa-times text-danger"></i></td>
-                    </tr>
+                                <td>{node.input}</td>
+                                <td>{node.name}</td>
+                                <td><i className="fa fa-check text-success"></i></td>
+                            </tr>
+                        );
+                    }
+                    else if(node.status == 2)
+                    {
+                        return(<tr>
+                                <td>{node.input}</td>
+                                <td>{node.name}</td>
+                                <td><i className="fa fa-times text-danger"></i></td>
+                            </tr>
+                        );
+                    }
+                    else if(node.name == undefined && node.status == undefined)
+                    {
+                        return(<tr>
+                                <td>{node.input}</td>
+                                <td><i className="fa fa-spinner fa-pulse"></i></td>
+                                <td><i className="fa fa-spinner fa-pulse"></i></td>
+                            </tr>
+                        );
+                    }
+                });
+
+                var percentComplete = (cmpCnt / this.props.inputData.length) * 100;
+
+                console.log(errorOccurred)
+
+                return(
+                    <div style={controlStyle}>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <table className="table table-striped">
+                                    <tr>
+                                        <th>Input</th>
+                                        <th>Student Name</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <tbody>
+                                        {rows}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <ProgressBarBox state={this.props.state} percentComplete={percentComplete} errorOccurred={errorOccurred}/>
+                            </div>
+                        </div>
+                    </div>
                 );
             }
-            else if(node.name == undefined && node.status == undefined)
-            {
-                return(<tr>
-                    <td>{node.input}</td>
-                    <td><i className="fa fa-spinner fa-pulse"></i></td>
-                    <td><i className="fa fa-spinner fa-pulse"></i></td>
-                </tr>
-            );
         }
     });
-
-    var percentComplete = (cmpCnt / this.props.inputData.length) * 100;
-
-    return(
-        <div style={controlStyle}>
-            <div className="row">
-                <div className="col-md-6">
-                    <table className="table table-striped">
-                        <tr>
-                            <th>Input</th>
-                            <th>Student Name</th>
-                            <th>Status</th>
-                        </tr>
-                        <tbody>
-                            {rows}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-md-6">
-                    <ProgressBarBox state={this.props.state} percentComplete={percentComplete} error={errorOccurred}/>
-                </div>
-            </div>
-        </div>
-    );
-}
-}
-});
 
 var ProgressBarBox = React.createClass({
     render: function()
@@ -522,12 +525,12 @@ var ProgressBarBox = React.createClass({
         var success = true;
         var danger = false;
         var active = true;
-        if(percentage == 100)
+        if(this.props.percentComplete == 100)
         {
             complete = true;
             active = false;
         }
-        console.log(this.props.errorOccurred)
+        console.log(this.props.percentComplete)
         if(this.props.errorOccurred)
         {
             success = false;
@@ -535,7 +538,7 @@ var ProgressBarBox = React.createClass({
         }
         var progressBarClasses = classNames({
             'progress-bar': true,
-            'progress-bar-striped': complete,
+            'progress-bar-striped': !complete,
             'progress-bar-success': success,
             'progress-bar-danger': danger,
             'active': active
@@ -549,5 +552,4 @@ var ProgressBarBox = React.createClass({
         )
 
     }
-
 });
