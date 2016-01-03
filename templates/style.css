@@ -1,0 +1,176 @@
+/*****************************
+ * Twitter Typeahead Styling *
+ *****************************/
+.twitter-typeahead {
+    width: 100%;
+}
+
+.tt-hint {
+  color: #999;
+}
+
+.tt-menu {
+  width: 422px;
+  margin-top: 4px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  line-height: 24px;
+}
+
+.tt-suggestion:hover {
+  background-color: #ddd;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+/***** End Typeahead Styles *****/
+
+/***** Creation Interface Transitions *****/
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity .3s ease-in;
+}
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity .1s ease-in;
+}
+
+
+/* Turns off underline on icons in links */
+i[class^="icon-"]:before {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/**** Spinner *****/
+div .spinner {
+	margin-left: 70px;
+}
+
+/* Required field labels marked with splat */
+form .required label:after {
+    color: #e32;
+    content: '*';
+    display:inline;
+}
+
+#intern-totals {
+    /*font-weight: bold;*/
+    padding-top: 30px;
+    font-size: 10pt;
+    margin-bottom: -10px;
+}
+
+.edit-prog {
+    color: #0A759B;
+    cursor: pointer;
+}
+
+.hidden-prog {
+    font-style: italic;
+    color: #888888;
+}
+
+.expanded {
+    position:relative;
+    left:25px;
+}
+
+.expanded td {
+    padding-left:5px;
+    padding-right:5px;
+}
+
+#department-pager {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#major-pager {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#admin-pager {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/******************************************
+ * Styles for the add/edit internshp form *
+ *****************************************/
+
+/*** Change log styles ***/
+#changelog h3 {
+	border-bottom: 1px solid #D6D6D6;
+	font-size:100%;
+	font-weight:normal;
+}
+
+#changelog .exact-date {
+	float:right;
+}
+
+#changelog .comment {
+	margin-left: 2em;
+}
+
+/****** Search Results Styles **************/
+#search-results tr.result-row td {
+  padding: 0px;
+  white-space: nowrap;
+}
+
+#search-results tr.result-row td a {
+	display:block;
+	height:100%;
+	width:100%;
+	padding: 8px;
+	color:#000;
+	text-decoration:none;
+}
+
+#name-term-dept-search {
+    border: 1px solid #C0C0C0;
+    border-left: 10px solid #C0C0C0;
+    margin-left: -8px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+
+.ui-autocomplete {
+    width: 100px;
+}

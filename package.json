@@ -1,0 +1,27 @@
+{
+  "name": "AppSync",
+  "version": "0.0.0",
+  "description": "Web app for interfacing and adding students to the OrgSync Portal.",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AppstateESS/AppSync.git"
+  },
+  "keywords": [
+    "orgsync"
+  ],
+  "author": "Chris Detsch, et al.",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/AppstateESS/AppSync/issues"
+  },
+  "dependencies": {
+    "bower": "~1.6.8",
+    "react-dom": "~0.14.0",
+    "react": "~0.14.0",
+    "classnames": "~2.2.0"
+  }
+}
